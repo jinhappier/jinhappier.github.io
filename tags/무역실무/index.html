@@ -10,7 +10,7 @@
   
   <title>
     
-      Tags | Jin&#39;s Note
+      Jin&#39;s Note
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -153,42 +153,35 @@
 </header>
 
     <div id="article-banner">
-  <h2>Categories</h2>
-  <p class="post-date">Menu</p>
+  <h2>Archives</h2>
+  <p class="post-date"></p>
 </div>
-<main class="app-body">
-  <div id="tag-cloud">
+<main class="app-body" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2020
+  </h1>
+  <div class="section-list">
     
-      <a class="tag1" data-name="tag-무역실무">무역실무</a>
+    
+      <div class="section-list-item">
+        <a href="/2020/03/20/trade/part1_basic/" class="archive-title">Part1 무역의 기본</a>
+        <p class="archive-date">03-20</p>
+      </div>
     
   </div>
+</section>
   
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-무역실무">무역실무</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2020/03/20/trade/part1_basic/">Part1 무역의 기본</a>
-          </li>
-        </ul>
-        
-    </div>
-    
 </main>
 
 <script>
   (function () {
-    var url = 'https://jinhappier.github.io/tags/index.html'
-    $('#article-banner').geopattern(url)
-    $('.header').removeClass('fixed-header')
-
-    var tag = location.hash.replace('#', '')
-    if (tag) {
-      var tagId = "#tag-" + tag;
-      $("html, body").animate({
-        scrollTop: $(tagId).offset().top 
-      }, 400)
-    }
+    var url = 'https://jinhappier.github.io/tags/무역실무/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
   })();
 </script>
     <div class="scroll-top">
