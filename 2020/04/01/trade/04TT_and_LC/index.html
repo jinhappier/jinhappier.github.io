@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Jin&#39;s Blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      TT송금과 LC조건 | Jin&#39;s Note
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+    
+<script src="/js/qrious.js"></script>
+
+  
+  
+    
+<script src="/js/gitment.js"></script>
+
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Jin's Note</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Categories</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Categories</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>TT송금과 LC조건</h2>
+  <p class="post-date">2020-04-01</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h2 id="TT와-LC의-차이"><a href="#TT와-LC의-차이" class="headerlink" title="TT와 LC의 차이"></a>TT와 LC의 차이</h2><p>TT는 계좌이체하듯이 거래처와 직접 돈을 주고받는 것이며, LC는 중간에 은행이 있는 형태이다.</p>
+<br>
+
+<h2 id="LC-신용장-Letter-of-Credit"><a href="#LC-신용장-Letter-of-Credit" class="headerlink" title="LC(신용장, Letter of Credit)"></a>LC(신용장, Letter of Credit)</h2><p>: 은행이 거래처의 요청으로 신용을 보증하기 위해 발행하는 증서 (금액이 크거나 신용도가 떨어질 때)</p>
+<p><img src="https://postfiles.pstatic.net/MjAxOTAzMjZfMjIx/MDAxNTUzNjA4OTQxNzEz.-j7n5_b0aivroIm8OM9X_vQETFnW6PFjHVeyEajqb98g.UKTfGUABhg5LKhJESme2EQ5FusvpqrEJpHa_Ydxogrkg.PNG.gamseongtrip5/image.png?type=w966" alt=""></p>
+<h3 id="신용장의-조건"><a href="#신용장의-조건" class="headerlink" title="신용장의 조건"></a>신용장의 조건</h3><ul>
+<li><strong>at sight</strong>조건: 대금 상환과 동시에 선적서류 수령</li>
+<li><strong>usance</strong>조건: 선적서류 선수령, 청구대금 만기 결제<br> <u>구매자와 판매자의 대금지급시점, 대금수령시점에 따른 <strong>usance</strong>조건</u><ul>
+<li><strong>Shipper’s</strong>: 수입상이 만기에 결제, 수출상도 만기에 청구대금 원금을 수령</li>
+<li><strong>Banker’s</strong>: 수출상은 먼저 지급 받고, 수입상은 만기에 원금과 이자를 상환<br>(e.g. Banker’s Usance: 은행에서 수입상 대신 돈을 먼저 수출상에게 지금하는 대출형식)</li>
+</ul>
+</li>
+</ul>
+<h3 id="조심해야-할-부분"><a href="#조심해야-할-부분" class="headerlink" title="조심해야 할 부분"></a>조심해야 할 부분</h3><ul>
+<li><strong>42C</strong>(신용장 지급기일): Issuing date(신용장 발행일), BL date(선적서류 발행일), AWB date(항공화물운송장 발행일) 중 어디를 시발점으로 일수를 계산할지 거래처와 협의 후 진행</li>
+<li>최종목적지: 항공화물의 경우 출발항, 도착항 외에 최종목적지를 기재할 필요가 없다. 적는다면 LC에 특정 제약이 많아지기 때문에 추후 거래처에서 LC조건변경을 요구할 가능성이 높다. 꼭 적을 사항이 아니면 되도록 적지 말자.</li>
+<li><strong>44C</strong>(최종 선적일): 넉넉잡아 적자. 그 기간 이내에 선적할 “예정”이라는 의미이기 때문이다.</li>
+<li>은행의 확인을 받아 LC Open이 완료되었다면 은행측에서 Cable을 준다.</li>
+</ul>
+<p><strong>Cable</strong>: LC Open이 잘 진행되었다는 확인 (이를 거래처에 보내 LC를 오픈했다는 증명으로 사용 됨) </p>
+<h3 id="신용장-양식"><a href="#신용장-양식" class="headerlink" title="신용장 양식"></a><span style="color: red">신용장 양식</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">27</span>: Sequence of Total: <span class="number">1</span>/<span class="number">1</span> <span class="comment"># 총 쪽수: 총 1쪽</span></span><br><span class="line"></span><br><span class="line"><span class="number">40</span>A: Form of Documentary Credit : irrevocable <span class="comment"># 신용장의 종류: 취소불능신용장</span></span><br><span class="line"><span class="number">20</span>: Documentary Credit Number : E06315 <span class="comment"># 신용장번호(L/C No.)</span></span><br><span class="line"><span class="number">31</span>C: Date of Issue : <span class="number">160328</span> <span class="comment"># 신용장 발행일</span></span><br><span class="line"><span class="number">40</span>E: Applicable Rules : UCPURR LATEST VERSION <span class="comment"># 근거규정: 신용장통일규칙 최신판</span></span><br><span class="line"><span class="number">31</span>D: Date <span class="keyword">and</span> Place of Expiry : <span class="number">160710</span> Republic of Korea <span class="comment"># 유효기일 및 장소</span></span><br><span class="line"><span class="number">50</span>: Applicant : KANJA CORPORATION <span class="comment"># 개설신청인(수입자)</span></span><br><span class="line"><span class="number">59</span>: Beneficiary : SEINE TRADING CO.,LTD. <span class="comment"># 수익자(수출자)</span></span><br><span class="line"><span class="number">32</span>B: Currency Code, Amount : USD53100<span class="number">.00</span> <span class="comment"># 통화단위, 신용장 금액</span></span><br><span class="line"><span class="number">41</span>D: Available With ... By ... : ANY BANK IN REPUBLIC OF KOREA BY NEGOTIATION <span class="comment"># 신용장 사용은행 및 사용방법: 대한민국 어느 은행에서나 매입 가능</span></span><br><span class="line"><span class="number">42</span>C: Drafts at ...: SIGHT <span class="comment"># 환어음의 결제기일: 일람불(즉시 지급)</span></span><br><span class="line"><span class="number">42</span>D: Drawee : BANK OF JAPAN <span class="comment"># 환어음의 지급인</span></span><br><span class="line"><span class="number">43</span>P: Partial Shipment : NOT ALLOWED <span class="comment"># 분할선적</span></span><br><span class="line"><span class="number">43</span>T: Transshipment : ALLOWED <span class="comment"># 환적</span></span><br><span class="line"><span class="number">44</span>E: Port of Loading/Airport of Departure : BUSAN PORT, KOREA <span class="comment"># 선적항</span></span><br><span class="line"><span class="number">44</span>F: Port of Discharge/Airport of Destination : YOKOHAMA PORT, JAPAN <span class="comment"># 도착항</span></span><br><span class="line"><span class="number">44</span>C: Latest Date of Shipment : <span class="number">160630</span> <span class="comment"># 최종선적기일</span></span><br><span class="line"><span class="number">45</span>A: Description of Goods <span class="keyword">and</span>/<span class="keyword">or</span> Services : <span class="comment"># 상품 또는 서비스의 명세</span></span><br><span class="line">     Electric Drill ACT<span class="number">-100</span>M <span class="number">300</span>sets</span><br><span class="line">     Electric Grinder PD<span class="number">-6</span>K <span class="number">300</span>sets</span><br><span class="line"><span class="number">46</span>A: Documents Required : <span class="comment"># 요구서류</span></span><br><span class="line">     +SIGNED COMMERCIAL INVOICE IN QUINTUPLICATE <span class="comment"># 서명된 상업송장 5부</span></span><br><span class="line">     +FULL SET OF CLEAN ON BOARD BILL OF LADING MADE OUT TO THE ORDER OF BANK AND BLANK</span><br><span class="line">     ENDORSED FREIGHT PREPAID AND NOTIFY ALLICANT. <span class="comment"># 운임 선지급이라 표시되고, 개설신청인을 통지인으로 하며, 백지이서가 되어 있으며 은행 지시식으로 작성된 무사고 본선적채해상선하증권 풀 세트(전통)</span></span><br><span class="line">     +INSURANCE POLICY IN DUPLICATE ENDORSED IN BLANK FOR <span class="number">110</span> PCT OF THE INVOICE VALUES</span><br><span class="line">     COVERING: THE INSTITUTE CARGO CLAUSED(ALL RISKS) INCLUDING WAR RISKS AND S.R.C.C. <span class="comment"># 전쟁위험과 동맹파업 위험을 포함한 전위험담보조건을 커버하는 상업송장 금액의 110%을 부보하며, 백지이서된 보험증권 2부</span></span><br><span class="line">     +PACKING LIST IN TRIPLICATE <span class="comment"># 포장명세서 3부</span></span><br><span class="line">     +CERTIFICATE OF ORIGIN <span class="comment"># 원산지 증명서</span></span><br><span class="line"><span class="number">47</span>A: Additional Conditions <span class="comment"># 추가조건</span></span><br><span class="line">     +ALL DOCUMENTS MUST BEAR CREDIT NUMBER. <span class="comment"># 모든 선적서류에는 신용장번호가 기재되어야 한다.</span></span><br><span class="line">     +ALL DOCUMENTS REQUIRED UNDER THIS L/C MUST BE ISSUED IN ENGLISH LANGUAGE. <span class="comment"># 이 신용장에서 요구하는 모든 서류는 영어로 작성되어야 한다.</span></span><br><span class="line">     +ALL DRAFTS IN DUPLICATE MUST INDICATE THE L/C NUMBER, DATE OF ISSUE AND NAME : <span class="comment"># 2통의 환어음에는 신용장번호, 발행일, 발행은행명이 기재되어야 한다.</span></span><br><span class="line">     +THIS CREDIT IS SUBJECT TO THE UNIFORM CUSTOMS AND PRACTICE FOR DOCUMENTARY CREDITS,</span><br><span class="line">     <span class="number">2007</span> REVISION, ICC PUBLICATION NO. <span class="number">600.</span> <span class="comment"># 이 신용장은 2007년 개정 ICC 간행물 제 600호 화환신용장통일규칙을 준거한다.</span></span><br><span class="line"><span class="number">71</span>B: Charges : ALL BANK CHARGES OUTSIDE JAPAN INCLUDING REIMBURSING CHARGES ARE FOR ACCOUNT</span><br><span class="line">     OF BENEFICIARY. <span class="comment"># 수수료: 상환수수료를 포함해서 일본 밖에서 발생하는 모든 은행 수수료는 수익자가 부담한다.</span></span><br><span class="line"><span class="number">49</span>: Confirmation Instruction : WITHOUT <span class="comment"># 확인지시: 확인하지 않는다</span></span><br><span class="line"><span class="number">48</span>: PRESENTATION PERIOD : TRANSPORT DOCUMENTS MUST BE PRESENTED WITHIN <span class="number">15</span> DAYS AFTER THE</span><br><span class="line">    DATE OF SHIPMENT BUT WITHIN THE EXPIRY DATE OF THE CREDIT. <span class="comment"># 서류제출기간: 운송서류는 신용장의 유효기한 내에 선적 후 15일 내에 제출해야 한다</span></span><br><span class="line"><span class="number">53</span>A: Reimbursing Bank : <span class="comment"># 상환은행</span></span><br><span class="line"><span class="number">78</span>: Instruction to the Paying/Accepting/Negotiating Bank : <span class="comment"># 지급/인수/매입은행에 대한 지시:</span></span><br><span class="line">    DOCUMENTS TO BE FORWARDED TO US IN ONE LOT BY COURIER. <span class="comment"># 선적서류는 봉투 하나에 넣어서 국제특송편으로 개설은행에 보내야 한다</span></span><br><span class="line"><span class="number">57</span>D: <span class="string">'Advise Through'</span>Bank : <span class="comment"># 통지은행:</span></span><br><span class="line"><span class="number">72</span>: Sender to Receiver Information : PLEASE ADVISE BENEFICIARY URGENTLY <span class="comment"># 수신은행 정보사항: 신속하게 수익자에게 통지해주십시오.</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="TT송금-전신환-Telegraphic-Transfer"><a href="#TT송금-전신환-Telegraphic-Transfer" class="headerlink" title="TT송금(전신환, Telegraphic Transfer)"></a>TT송금(전신환, Telegraphic Transfer)</h2><p>: 외국환을 매매할 때 외화의 송금을 전신으로 위탁하는 방식</p>
+<p>TT는 신용장과 같은 서류를 사용할 필요가 없기 때문에 절차가 간편하며, 통장간 입금이나 이체로 대체되기 때문에 수수료가 낮다.</p>
+<ol>
+<li><p>돈을 받아야 할 쪽에서 Bank Information 제시</p>
+<ul>
+<li><p>Beneficiary Bank정보 (Name, BIC/SWIFT Code, BANK Address)</p>
+</li>
+<li><p>Beneficiary 정보 (Name, Account No., Beneficiary Address)</p>
+<p><span style="color: blue">은행 주소 및 Beneficiary주소는 필수 정보는 아니지만 대금 전달 과정에서 확인을 위해 있으면 좋다.</span></p>
+</li>
+</ul>
+</li>
+<li><p>송금 후 송금증명서 요청</p>
+<p>: 구매자가 송금 후 보통 2~3일 후 입금 확인이 된다. </p>
+</li>
+<li><p>은행에 인보이스 제출</p>
+<p>: 은행은 외화 금액이 큰 경우 어떤 건으로 인한 지급인지 증빙을 요청한다. 은행이 대금을 송금하거나, 입금 확인 시 서류를 요청하면 인보이스를 제출하면 된다.</p>
+</li>
+</ol>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#무역실무" >
+    <span class="tag-code">무역실무</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2020/04/01/trade/03incoterms_insurance/">
+        <span class="nav-arrow">← </span>
+        
+          인코텀즈와 보험
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+
+
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#TT와-LC의-차이"><span class="toc-nav-text">TT와 LC의 차이</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#LC-신용장-Letter-of-Credit"><span class="toc-nav-text">LC(신용장, Letter of Credit)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#신용장의-조건"><span class="toc-nav-text">신용장의 조건</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#조심해야-할-부분"><span class="toc-nav-text">조심해야 할 부분</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#신용장-양식"><span class="toc-nav-text">신용장 양식</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#TT송금-전신환-Telegraphic-Transfer"><span class="toc-nav-text">TT송금(전신환, Telegraphic Transfer)</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://jinhappier.github.io/2020/04/01/trade/04TT_and_LC/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+  <script>
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+  </script>
+
+
+
+  <script>
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "TT송금과 LC조건",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  </script>
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" target="_blank" rel="noopener">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>
