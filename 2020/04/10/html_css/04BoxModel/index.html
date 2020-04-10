@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Jin&#39;s Blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Box Model | Jin&#39;s Note
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+    
+<script src="/js/qrious.js"></script>
+
+  
+  
+    
+<script src="/js/gitment.js"></script>
+
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Jin's Note</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Categories</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Categories</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Box Model</h2>
+  <p class="post-date">2020-04-10</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="https://i.stack.imgur.com/5DhjB.png" alt="Google 개발자도구 박스모델"></p>
+<h3 id="padding"><a href="#padding" class="headerlink" title="padding"></a><code>padding</code></h3><p>: 내용과 테두리 사이 여유 공간(테두리 안의 공간)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div1</span> &#123;</span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">padding-right</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">60px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div2</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">60px</span>; <span class="comment">/* 위 아래 오른쪽 왼쪽 전부 같은 공간을 차지할 때 (축약) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div3</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span> <span class="number">22px</span> <span class="number">10px</span>; <span class="comment">/* 위 아래 오른쪽 왼쪽 전부 다른 공간을 차지할 때 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="border"><a href="#border" class="headerlink" title="border"></a><code>border</code></h3><p>: 테두리</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.div1 &#123;</span><br><span class="line">  border-style: solid; &#x2F;* dotted, dashed *&#x2F;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.div2 &#123;</span><br><span class="line">  border-color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.div3 &#123;</span><br><span class="line">  border-width: 5px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.div4 &#123;</span><br><span class="line">  border-top: 3px dotted red; &#x2F;* 테두리 각각 설정 *&#x2F;</span><br><span class="line">  border-right: 1px solid blue;</span><br><span class="line">  border-bottom: 3px dashed red;</span><br><span class="line">  border-left: 1px solid yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.div5 &#123;</span><br><span class="line">  border: none; &#x2F;* 테두리 없애기 &#x3D;&#x3D; border: 0 *&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a><code>border-radius</code></h3><p>: 요소의 모서리를 둥글게 만듦</p>
+<p>​<del>~</del>css<br>.div1 {<br>  border: 1px solid green;<br>  border-radius: 5px;<br>}</p>
+<p>.div2 {<br>  /* 개별 설정 <em>/<br>  border: 1px solid green;<br>  border-top-left-radius: 50px; /</em> 왼쪽 위 <em>/<br>  border-top-right-radius: 5px; /</em> 오른쪽 위 <em>/<br>  border-bottom-right-radius: 0px; /</em> 오른쪽 아래 <em>/<br>  border-bottom-left-radius: 20px; /</em> 왼쪽 아래 */<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### &#96;margin&#96;</span><br><span class="line"></span><br><span class="line">: 이 요소와 다른 요소 사이의 여백 (테두리 밖의 공간)</span><br><span class="line"></span><br><span class="line">~~~css</span><br><span class="line">.div1 &#123;</span><br><span class="line">  margin-top: 60px;</span><br><span class="line">  margin-right: 60px;</span><br><span class="line">  margin-bottom: 60px;</span><br><span class="line">  margin-left: 60px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.div2 &#123;</span><br><span class="line">  margin: 60px; &#x2F;* 위 아래 오른쪽 왼쪽 전부 같은 공간을 차지할 때 (축약) *&#x2F;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.div3 &#123;</span><br><span class="line">  margin: 10px 20px 22px 10px; &#x2F;* 위 아래 오른쪽 왼쪽 전부 다른 공간을 차지할 때 *&#x2F;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.div4 &#123;</span><br><span class="line">  margin: auto; &#x2F;* 요소를 가운데 정렬 *&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="width-height-min-max"><a href="#width-height-min-max" class="headerlink" title="width, height, min, max"></a><code>width</code>, <code>height</code>, <code>min</code>, <code>max</code></h3><p>: 요소의 가로와 세로의 길이 설정</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div1</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div2</span> &#123;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">1000px</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">max-height</span>: <span class="number">1000px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a><code>overflow</code></h3><p>:  <code>width</code>, <code>height</code>, <code>max-width</code>, <code>max-height</code>등을 설정하다보면, 내용물이 들어갈 공간이 부족한 경우에 해당 속성으로 처리</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div_visible</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: visible; <span class="comment">/* 넘쳐나는 내용물이 그대로 보임 (기본 값) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div_hidden</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden; <span class="comment">/* 넘쳐나는 부분을 숨겨줌 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div_scroll</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: scroll; <span class="comment">/* 내용물을 숨겼다가 사용자가 스크롤하면 보여줄 수 있음 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div_auto</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: auto; <span class="comment">/* scroll과 같지만 scroll은 항상 스크롤바를 보여주고, auto는 내용물이 넘쳐날 때만 스크롤바를 보여줌. (MacOS에서는 스크롤을 할 때만 스크롤바를 보여주는 경향이 있기 때문에 scroll과 auto의 차이를 보기 힘들 수도 있다.) */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="background-color"><a href="#background-color" class="headerlink" title="background-color"></a><code>background-color</code></h3><p>: 배경색 설정 (색이름, RGB코드, HEX코드 중 하나 입력)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div1</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#4d9fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div2</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.bg_transparent</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: transparent; <span class="comment">/* 배경색을 투명하게 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="background-repeat"><a href="#background-repeat" class="headerlink" title="background-repeat"></a><code>background-repeat</code></h3><p>: 배경 이미지를 반복시킬 것인지 아닐 것인지, 그리고 반복시킨다면 어떤 방식으로 반복시킬 것인지 정해주는 속성</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 반복하지 않음 */</span></span><br><span class="line"><span class="selector-tag">background-repeat</span>: <span class="selector-tag">no-repeat</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 가로 방향으로만 반복 */</span></span><br><span class="line"><span class="selector-tag">background-repeat</span>: <span class="selector-tag">repeat-x</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 세로 방향으로만 반복 */</span></span><br><span class="line"><span class="selector-tag">background-repeat</span>: <span class="selector-tag">repeat-y</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 가로와 세로 모두 반복 */</span></span><br><span class="line"><span class="selector-tag">background-repeat</span>: <span class="selector-tag">repeat</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 반복할 수 있는 만큼 반복한 뒤, 남는 공간은 이미지 간의 여백으로 배분 */</span></span><br><span class="line"><span class="selector-tag">background-repeat</span>: <span class="selector-tag">space</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 반복할 수 있는 만큼 반복한 뒤, 남는 공간은 이미지 확대를 통해 배분 */</span></span><br><span class="line"><span class="selector-tag">background-repeat</span>: <span class="selector-tag">round</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a><code>background-size</code></h3><p>: 배경이미지의 사이즈를 정해주는 속성</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 원래 이미지 사이즈대로 출력 */</span></span><br><span class="line"><span class="selector-tag">background-size</span>: <span class="selector-tag">auto</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 화면을 꽉 채우면서, 사진 비율을 유지 */</span></span><br><span class="line"><span class="selector-tag">background-size</span>: <span class="selector-tag">cover</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 가로, 세로 중 먼저 채워지는 쪽에 맞추어서 출력 */</span></span><br><span class="line"><span class="selector-tag">background-size</span>: <span class="selector-tag">contain</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 픽셀값 지정 (가로: 30px, 세로: 50px로 설정) */</span></span><br><span class="line"><span class="selector-tag">background-size</span>: 30<span class="selector-tag">px</span> 50<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 퍼센트값 지정 (가로: 부모 요소 width의 60%, 세로: 부모 요소 height의 70%로 설정) */</span></span><br><span class="line"><span class="selector-tag">background-size</span>: 60% 70%;</span><br></pre></td></tr></table></figure>
+
+<h3 id="background-position"><a href="#background-position" class="headerlink" title="background-position"></a><code>background-position</code></h3><p>: 배경 이미지의 위치를 정해주는 속성</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 단어로 지정해주기 (가로: left, center, right, 세로: top, center, bottom) */</span></span><br><span class="line"><span class="comment">/* 아래와 같은 총 9개의 조합이 가능 */</span></span><br><span class="line"><span class="selector-tag">background-position</span>: <span class="selector-tag">left</span> <span class="selector-tag">top</span>;</span><br><span class="line"><span class="selector-tag">background-position</span>: <span class="selector-tag">left</span> <span class="selector-tag">center</span>;</span><br><span class="line"><span class="selector-tag">background-position</span>: <span class="selector-tag">left</span> <span class="selector-tag">bottom</span>;</span><br><span class="line"><span class="selector-tag">background-position</span>: <span class="selector-tag">right</span> <span class="selector-tag">top</span>;</span><br><span class="line"><span class="selector-tag">background-position</span>: <span class="selector-tag">right</span> <span class="selector-tag">center</span>;</span><br><span class="line"><span class="selector-tag">background-position</span>: <span class="selector-tag">right</span> <span class="selector-tag">bottom</span>;</span><br><span class="line"><span class="selector-tag">background-position</span>: <span class="selector-tag">center</span> <span class="selector-tag">top</span>;</span><br><span class="line"><span class="selector-tag">background-position</span>: <span class="selector-tag">center</span> <span class="selector-tag">center</span>;</span><br><span class="line"><span class="selector-tag">background-position</span>: <span class="selector-tag">center</span> <span class="selector-tag">bottom</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 퍼센트로 지정해주기 (가로: 전체 width의 25% 지점, 세로: 전체 height의 75% 지점 ) */</span></span><br><span class="line"><span class="selector-tag">background-position</span>: 25% 75%;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 픽셀로 지정하기 (가로: 가장 왼쪽 가장자리에서부터 오른쪽으로 100px 이동한 지점, 세로: 가장 상단 가장자리에서 아래로 200px 이동한 지점) */</span></span><br><span class="line"><span class="selector-tag">background-position</span>: 100<span class="selector-tag">px</span> 200<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow"></a><code>box-shadow</code></h3><p>: 요소에 그림자 설정</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div1</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: none; <span class="comment">/* 그림자 없음 (default) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div2</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">40px</span> <span class="number">10px</span>; <span class="comment">/* 그림자 위치 설정 (가로, 세로) */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div3</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">40px</span> <span class="number">10px</span> red; <span class="comment">/* 그림자 색 설정 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div_blur</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">40px</span> <span class="number">10px</span> <span class="number">10px</span> #red; <span class="comment">/* 흐림정도 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div_sprad</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">40px</span> <span class="number">10px</span> <span class="number">10px</span> <span class="number">20px</span> #red; <span class="comment">/* 그림자 크기 */</span></span><br><span class="line">  <span class="comment">/* box-shadow: 가로위치 세로위치 흐림정도 그림자크기 그림자색 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a><code>box-sizing</code></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div1</span> &#123;</span><br><span class="line">  <span class="comment">/* 실제 width: 10px+10px+300px=320px, height: 10px+10px+200px=220px */</span></span><br><span class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div2</span> &#123;</span><br><span class="line">  <span class="comment">/* 실제 width: 10px+10px+300px+40px=360px, height: 10px+10px+200px+40px=260px */</span></span><br><span class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위의 두 박스는 넓이와 높이가 같지만 테두리와 패딩을 고려해서 계산해주어야 하는 불편함이 있다. </p>
+<p>CSS3부터는 <code>box-sizing</code>속성을 사용하면 이 문제를 해결할 수 있다.</p>
+<p><strong><code>box-sizing</code>의 기본값은 <code>content-box</code>인데, 이걸 <code>border-box</code>로 바꿔보자</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 두 박스의 크기는 같다 */</span></span><br><span class="line"><span class="selector-class">.div1</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div2</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>간편하게 사용하기 위해서</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box; <span class="comment">/* 전체 적용 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div1</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.div2</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#HTML/CSS" >
+    <span class="tag-code">HTML/CSS</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2020/04/10/html_css/03BasicCssAttr/">
+        <span class="nav-arrow">← </span>
+        
+          기본 CSS 태그
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+
+
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#padding"><span class="toc-nav-text">padding</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#border"><span class="toc-nav-text">border</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#border-radius"><span class="toc-nav-text">border-radius</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#width-height-min-max"><span class="toc-nav-text">width, height, min, max</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#overflow"><span class="toc-nav-text">overflow</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#background-color"><span class="toc-nav-text">background-color</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#background-repeat"><span class="toc-nav-text">background-repeat</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#background-size"><span class="toc-nav-text">background-size</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#background-position"><span class="toc-nav-text">background-position</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#box-shadow"><span class="toc-nav-text">box-shadow</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#box-sizing"><span class="toc-nav-text">box-sizing</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://jinhappier.github.io/2020/04/10/html_css/04BoxModel/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+  <script>
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+  </script>
+
+
+
+  <script>
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "Box Model",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  </script>
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" target="_blank" rel="noopener">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>
